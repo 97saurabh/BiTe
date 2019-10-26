@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends "myapp/base.html" %}
+{% block body_block %}
+
+
+
+
+
+
+
+
+
+<div class="container">
+  {% if not user %}
+  <hr>
+    <h3>WRONG DETAILS PASS</h3>
+    <h4>TRY AGAIN</h4>
+    <hr>
+    {% endif %}
+    <hr>
+  <h1>Please Login Here</h1>
+  <hr>
+  <form class="" action="{% url 'myapp:login'%}" method="post">
+    {% csrf_token %}
+    <label for="username">USername</label>
+    <input type="text" name="username" placeholder="Enter Username">
+    <p>
+    <label for="password">Password</label>
+    <input type="password" name="password" value="">
+    <p>
+    <input type="submit" name="" value="Login">
+
+  </form>
+
+</div>
+
+
+
+{% endblock %}

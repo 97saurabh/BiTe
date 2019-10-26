@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+{% extends "myapp/base.html" %}
+{% block body_block %}
+{% load staticfiles %}
+<div class="container">
+  <hr>
+  <h2>AboutUs</h2>
+<hr>
+<div class="row">
+    <div class="col" style="margin-left:100px;">
+      <div class="card text-dark" style="width: 22rem;">
+  <!-- img src="{% static "images/safura.jpg"%}" class="card-img-top" alt="..."-->
+  <div class="card-body">
+    <h2 class="card-title">SAFURA ZAHEER</h2>
+    </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">INFORMATION TECHNOLOGY</li>
+    <li class="list-group-item">IET LUCKNOW</li>
+    <li class="list-group-item">FRONT END DEVLOPER</li>
+  </ul>
+  <div class="card-body">
+    <a href="https://www.facebook.com/safura.zaheer.7" target="_blank" class="card-link">Facebook</a>
+    <a href="https://www.linkedin.com/in/safura-zaheer-8a320714b/" target="_blank"class="card-link">LinkdIn</a>
+  </div>
+</div>
+
+    </div>
+    <div class="col">
+      <div class="card text-dark" style="width: 22rem;">
+  <!-- img src="{% static "images/saurabh.jpg"%}" class="card-img-top" alt="..."-->
+  <div class="card-body">
+    <h2 class="card-title">SAURABH SINGH</h2>
+    </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">INFORMATION TECHNOLOGY</li>
+    <li class="list-group-item">IET LUCKNOW</li>
+    <li class="list-group-item">BACK END DEVLOPER</li>
+  </ul>
+  <div class="card-body">
+    <a href="https://www.facebook.com/profile.php?id=100006109419616" target="_blank" class="card-link">Facebook</a>
+    <a href="https://www.linkedin.com/in/saurabh-singh-ba5301158/" target="_blank" class="card-link">LinkdIn</a>
+  </div>
+</div>
+
+    </div>
+
+
+  </div>
+  </div>
+
+{% endblock %}

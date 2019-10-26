@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% extends "myapp/base.html" %}
+{% block body_block %}
+<div class="container">
+  {% if user.is_authenticated %}
+  {% if user.type.type_user == "shop" %}
+    <h3 style="margin-top:20px;"> Hi... {{ user.first_name }}</h3>
+    <h4>Foods Provided by You</h4>
+
+      {% for fo in user.foods.all %}
+    {% if not forloop.counter|divisibleby:2 %}
+    <hr>
+      <div class="row" style="margin-left:120px;">
+
+      {% endif %}
+
+      <div class="cols card" style="margin-left:95px;" >
+
+        <div class="card-body" style="width: 18rem;">
+          <h5 class="card-title">{{ fo.food_name|upper }}</h5>
+          <p class="card-text">Food Type : {{ fo.food_type|capfirst }}</p>
+          <p class="card-text">Rate : {{ fo.food_rate }} INR</p>
+          <a href="{% url 'myapp:update_food' pk=fo.pk %}" class="btn btn-primary">Update</a>
+          <a href="{% url 'myapp:food_remove' pk=fo.pk %}" class="btn btn-primary" style="margin-left:30px;">Delete</a>
+        </div>
+      </div>
+      {% if forloop.counter|divisibleby:2 %}
+
+    </div>
+        {% endif %}
+
+      {% endfor %}
+
+
+  {% else %}
+      <h1>{{ user.first_name }}, Thanks for using Bite.com </h1>
+      {% endif %}
+  {% else %}
+  <h1>You have to LogIn or Register first</h1>
+  {% endif %}
+</div>
+
+
+
+
+
+
+{% endblock %}

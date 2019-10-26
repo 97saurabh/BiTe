@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+{% extends "myapp/base.html" %}
+{% block body_block %}
+
+<div class="container">
+
+
+<form class=""  method="post">
+    {% csrf_token %}
+    <h3>On Clicking Confirm</h3>
+    <h4>ITEM : {{ object.food_name }} ITEM TYPE : {{ object.food_type }} ITEM PRICE: {{ object.food_rate }}</h4>
+    <h4>Will be Deleted</h4>
+    <input type="submit" name="" value="Confirm" class='btn btn-danger'>
+
+  </form>
+
+</div>
+
+{% endblock %}

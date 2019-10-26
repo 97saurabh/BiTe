@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+{% extends "myapp/base.html" %}
+{% block body_block %}
+
+
+<div class="container">
+  {% if user.is_authenticated %}
+
+
+    {% if user.type.type_user == "buyer" %}
+
+      <ul class="list-group">
+        <hr>
+        <li class="list-group-item active">Your Cart</li>
+        {% for d in data %}
+
+          {% if d.customer == user %}
+        <li class="list-group-item">{{ d.vendor.user.username }}   {{d.vendor.food_name}}  {{ d.vendor.food_rate }} <a href="{% url 'myapp:cart_delete' pk=d.pk %}" class="btn btn-primary">DELETE</a> </li>
+
+
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <hr>
+      <li class="list-group-item active" ><h2 style="margin-left:13em;">Total        :            {{ total }} INR</h2></li>
+      <hr>
+      <div style="margin-left:26em;">
+        <a href="{% url 'myapp:your_cart_delete' pk=user.pk %}" class="btn btn-primary">Clear Cart</a>
+        <a href="{% url 'myapp:your_cart_order' pk=user.pk %}" class="btn btn-primary" style="margin-left:30px;">Order Now</a>
+      </div>
+<!-- your_cart -->
+<hr>
+    {% endif %}
+  {% else %}
+    <ul class="list-group">
+      <li class="list-group-item active"> Nothing to Display</li>
+
+    </ul>
+
+{% endif %}
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

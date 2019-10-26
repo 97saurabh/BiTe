@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+{% extends "myapp/base.html" %}
+{% block body_block %}
+<div class="container">
+
+
+<hr>
+{% if user.is_authenticated %}
+<ul class="list-group">
+    <li class="list-group-item active"><h1 style="margin-left:10em;">Your Orders</h1></li>
+
+
+
+          {% if user.type.type_user == "buyer" %}
+          <hr>
+                  <table  border="1">
+                    <tr style="text-align:center;">
+                      <th>DATE</th>
+                      <th>ORDERED FROM</th>
+                      <th>ORDERED FOOD</th>
+                      <th>FOOD RATE</th>
+                      <th>STATUS </th>
+                    </tr>
+                  {% for da in data %}
+                  <tr style="text-align:center;">
+                    <td>{{ da.date_field }}</td>
+                    <td>{{ da.vendor }}</td>
+                    <td>{{ da.food_name }}</td>
+                    <td>{{ da.food_rate }}</td>
+                    <td>{{ da.order_status}}</td>
+                  </tr>
+
+
+                  {% endfor %}
+                  </table>
+
+
+
+
+          {% else %}
+
+
+          <hr>
+                  <table  border="1">
+                    <tr style="text-align:center;">
+                      <th>DATE</th>
+                      <th>ORDERED FROM</th>
+                      <th>ORDERED FOOD</th>
+                      <th>FOOD RATE</th>
+                      <th>STATUS </th>
+                    </tr>
+                  {% for da in data %}
+                  <tr style="text-align:center;">
+                    <td>{{ da.date_field }}</td>
+                    <td>{{ da.customer }}</td>
+                    <td>{{ da.food_name }}</td>
+                    <td>{{ da.food_rate }}</td>
+                    {% if da.order_status == "Pending" %}
+                    <td><a href="{% url 'myapp:change_status' pk=da.pk %}">{{ da.order_status }}</a></td>
+                    {% else %}
+                    <td>{{ da.order_status }}</td>
+                    {% endif %}
+                  </tr>
+
+
+                  {% endfor %}
+                  </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          {% endif %}
+
+
+
+{% endif %}
+
+
+
+
+</div>
+{% endblock %}
