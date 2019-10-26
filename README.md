@@ -39,6 +39,6 @@ Buyer can add items to their cart and also see their previous orders.
 
 ### ABOUT US:
 #### CONTACT US:
-[SAFURA ZAHEER](https://www.linkedin.com/in/safura-zaheer-8a320714b/)
+[SAFURA ZAHEER](https://www.linkedin.com/in/safura-zaheer-8a320714b/)<br/>
 [SAURABH SINGH](https://www.linkedin.com/in/saurabh-singh-ba5301158/)
 
