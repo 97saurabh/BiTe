@@ -38,6 +38,7 @@ Buyer can add items to their cart and also see their previous orders.
 ![GitHub Logo](/image/orders.png)
 
 ### ABOUT US:
+![GitHub Logo](/image/about_us.png)
 #### CONTACT US:
 [SAFURA ZAHEER](https://www.linkedin.com/in/safura-zaheer-8a320714b/)<br/>
 [SAURABH SINGH](https://www.linkedin.com/in/saurabh-singh-ba5301158/)
